@@ -3,7 +3,7 @@ SELECT
     COUNT(*) AS Total,
     COALESCE(SUM(CASE WHEN i_lessons.lesson_id IS NOT NULL THEN 1 ELSE 0 END), 0) AS Individual,
     COALESCE(SUM(CASE WHEN g_lessons.lesson_id IS NOT NULL THEN 1 ELSE 0 END), 0) AS Group,
-    COALESCE(SUM(CASE WHEN e_lessons.lesson_id IS NOT NULL THEN 1 ELSE 0 END), 0) AS Ensemble
+    COALESCE(SUM(CASE WHEN e_lessons.lesson_id IS NOT NULL THEN 1 ELSE 0 END), 0) AS Ensamble
 FROM
     generate_series(
         '2023-01-01'::timestamp,
