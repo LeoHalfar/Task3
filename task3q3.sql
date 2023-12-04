@@ -8,8 +8,8 @@ FROM
 JOIN
     lesson ON instructor.instructor_id = lesson.instructor_id
 WHERE
-    EXTRACT(MONTH FROM lesson.start_time) = 12
-    AND EXTRACT(YEAR FROM lesson.start_time) = 2023
+    lesson.start_time >= '2023-12-01'::timestamp
+    AND lesson.start_time < '2023-12-28'::timestamp
 GROUP BY
     instructor.instructor_id, instructor.first_name, instructor.last_name
 HAVING
